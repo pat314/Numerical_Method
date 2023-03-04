@@ -13,10 +13,15 @@ double df(double x)
 }
 
 int main() {
-    double p0, TOL;
+    double a, b, p0, TOL;
     int n0;
     cout << "INPUT: " << endl;
     
+    cout << "Interval [a; b]" << endl << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+
     cout << "Initial point: ";
     cin >> p0;
        
@@ -31,7 +36,7 @@ int main() {
     while (i <= n0)
 	{
 		double p = p0 - (f(p0) / df(p0));
-		if (fabs(p - p0) < TOL)
+		if (fabs(p - p0) < TOL && p <= b && p >= a)
 		{
             cout << "OUTPUT: " << endl;
 			cout <<"Approximation: "<< p << endl;
