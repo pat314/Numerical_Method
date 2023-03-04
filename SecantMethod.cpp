@@ -44,10 +44,10 @@ int main() {
 			return 0;
 		}
 		i ++;
-		p1 = p0;
-        q1 = q0;
-        p0 = p;
-        q0 = f(p);
+		p0 = p1;
+        q0 = q1;
+        p1 = p;
+        q1 = f(p);
 	}
     cout << "OUTPUT: " << endl;
 	cout << "Method failed after " << n0 << " iterations";
