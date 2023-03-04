@@ -20,7 +20,7 @@ int main() {
     //BISECTION METHOD
     int i = 1;
     double fa = (a + 2) * (a + 1) * a * (a - 1)* (a - 1) * (a - 1) * (a - 2);
-	while (i < n0)
+	while (i <= n0)
 	{
 		double p = a + (b - a) / 2;
 		double fp = (p + 2) * (p + 1) * p * (p - 1)* (p - 1) * (p - 1) * (p - 2);
