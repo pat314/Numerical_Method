@@ -26,6 +26,7 @@ int main() {
 		double fp = (p + 2) * (p + 1) * p * (p - 1)* (p - 1) * (p - 1) * (p - 2);
 		if ((fp ==0) || ((b - a) / 2) < TOL)
 		{
+            cout << "OUTPUT: " << endl;
 			cout <<"Approximation: "<< p << endl;
             cout <<"Iterations: " << i;
 			return 0;
@@ -34,6 +35,7 @@ int main() {
 		if (fa * fp > 0) a = p;
 		else b = p;
 	}
+    cout << "OUTPUT: " << endl;
 	cout << "Method failed after " << n0 << " iterations";
 	return 0;
 }
