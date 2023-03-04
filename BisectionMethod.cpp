@@ -26,7 +26,7 @@ int main() {
 		double fp = (p + 2) * (p + 1) * p * (p - 1)* (p - 1) * (p - 1) * (p - 2);
 		if ((fp ==0) || ((b - a) / 2) < TOL)
 		{
-			cout << p << endl;
+			cout <<"Approximation: "<< p << endl;
             cout <<"Iterations: " << i;
 			return 0;
 		}
