@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+double f(double x)
+{
+    return ((x + 2) * (x + 1) * x * (x - 1) * (x - 1) * (x - 1) * (x - 2));
+}
+
 int main() {
     double a, b, TOL;
     int n0;
@@ -19,12 +24,10 @@ int main() {
     
     //BISECTION METHOD
     int i = 1;
-    double fa = (a + 2) * (a + 1) * a * (a - 1)* (a - 1) * (a - 1) * (a - 2);
-	while (i <= n0)
+    while (i <= n0)
 	{
 		double p = a + (b - a) / 2;
-		double fp = (p + 2) * (p + 1) * p * (p - 1)* (p - 1) * (p - 1) * (p - 2);
-		if ((fp ==0) || ((b - a) / 2) < TOL)
+		if ((f(p) == 0) || ((b - a) / 2) < TOL)
 		{
             cout << "OUTPUT: " << endl;
 			cout <<"Approximation: "<< p << endl;
@@ -32,7 +35,7 @@ int main() {
 			return 0;
 		}
 		i ++;
-		if (fa * fp > 0) a = p;
+		if (f(a) * f(p) > 0) a = p;
 		else b = p;
 	}
     cout << "OUTPUT: " << endl;
