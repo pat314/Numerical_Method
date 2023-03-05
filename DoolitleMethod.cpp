@@ -142,7 +142,7 @@ int main()
 
     //DOOLITTLE METHOD
     u[0][0] = a[0][0];
-    if (!(u[0][0] * u[0][0]))
+    if (!(u[0][0]))
     {
         cout << "OUTPUT" << endl << "Factorization impossible! (1)";
         return 0;
