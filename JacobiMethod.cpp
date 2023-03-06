@@ -53,7 +53,7 @@ void printSolution (double x[], int n)
 
 int main()
 {
-    cout <<"Number of equations and unknowns: ";
+    cout << "INPUT" << endl << "Number of equations and unknowns: ";
     int n;
     cin >> n;
 
@@ -82,7 +82,7 @@ int main()
              << "i        ";
         for (int i =0; i < n; i++)
         {
-            cout << "x" << i << "         ";
+            cout << "x" << i + 1 << "         ";
         }
         cout << endl;
     //JACOBI METHOD
@@ -92,11 +92,13 @@ int main()
         double x[MAX];
         for (int i = 0; i < n; i++)
         {
-            double sum1 = 0, sum2 = 0;
-            for (int j = 0; j <= i - 1; j ++) sum1 += (A[i][j] * x[j]);
-            for (int j = i + 1; j < n; j++) sum2 += (A[i][j] * x0[j]);
+            double sum = 0;
+            for (int j = 0; j < n; j ++) 
+            {
+                if ((j != i)) sum += A[i][j] * x0[j];
+            }
             
-            x[i] = (- sum1 - sum2 + b[i]) / A[i][i];
+            x[i] = (- sum + b[i]) / A[i][i];
         }
         
         cout << k << "        ";
@@ -110,6 +112,7 @@ int main()
         {
             cout << "OUTPUT" << endl;
             printSolution (x, n);
+            cout << "Iterations: " << k;
             return 0;
         }
 
